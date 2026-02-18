@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="Banner.css">
   <link rel="stylesheet" href="Gambar.css">
   <link rel="icon" type="image/png" href="">
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="Album.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap" rel="stylesheet">
-  
 
   
 
@@ -135,11 +135,88 @@
   <section id="timeline" class="content">
     <h2>Timeline</h2>
     <p>Timeline kegiatan ISCO 2026.</p>
+    <div class="poster animated-img">
+  
+      <div class="timeline-grid">
+  
+      <div class="timeline-row">
+        <div class="step">
+          <div class="date">22 Februari - 18 Maret 2026</div>
+          <div class="title">Registration Batch 1</div>
+        </div>
+        <div class="arrow">&#11166</div>
+        <div class="step">
+          <div class="date">19 Maret - 11 April 2026</div>
+          <div class="title">Registration Batch 2</div>
+        </div>
+        <div class="arrow">&#11166</div>
+        <div class="step">
+          <div class="date">12 April - 30 April 2026</div>
+          <div class="title">Registration Batch 3</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="step">
+          <div class="date">2 Mei 2026 </div>
+          <div class="title">Technical Meeting (Online)</div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step">
+          <div class="date">Sabtu, 9 Mei 2026 </div>
+          <div class="title">Hari H</div>
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+
+  
+ 
   </section>
 
   <section id="album" class="content">
     <h2>Album</h2>
     <p>Dokumentasi kegiatan.</p>
+<div class="album-container animated-img">
+  <div class="polaroid">
+    <div class="slideshow-container">
+      <img src="https://picsum.photos/500?random=1" class="slide active">
+      <img src="https://picsum.photos/500?random=2" class="slide">
+      <img src="https://picsum.photos/500?random=3" class="slide">
+      <img src="https://picsum.photos/500?random=4" class="slide">
+      <img src="https://picsum.photos/500?random=5" class="slide">
+    </div>
+  </div>
+   <div class="polaroid">
+    <div class="slideshow-container">
+      <img src="https://picsum.photos/500?random=1" class="slide active">
+      <img src="https://picsum.photos/500?random=2" class="slide">
+      <img src="https://picsum.photos/500?random=3" class="slide">
+      <img src="https://picsum.photos/500?random=4" class="slide">
+      <img src="https://picsum.photos/500?random=5" class="slide">
+    </div>
+  </div>
+  <div class="polaroid">
+    <div class="slideshow-container">
+      <img src="https://picsum.photos/500?random=1" class="slide active">
+      <img src="https://picsum.photos/500?random=2" class="slide">
+      <img src="https://picsum.photos/500?random=3" class="slide">
+      <img src="https://picsum.photos/500?random=4" class="slide">
+      <img src="https://picsum.photos/500?random=5" class="slide">
+    </div>
+  </div>
+   <div class="polaroid">
+    <div class="slideshow-container">
+      <img src="https://picsum.photos/500?random=1" class="slide active">
+      <img src="https://picsum.photos/500?random=2" class="slide">
+      <img src="https://picsum.photos/500?random=3" class="slide">
+      <img src="https://picsum.photos/500?random=4" class="slide">
+      <img src="https://picsum.photos/500?random=5" class="slide">
+    </div>
+  </div>
+
+</div>
   </section>
 
   <section id="media" class="content">
@@ -248,7 +325,34 @@ const imageObserver = new IntersectionObserver(
 animatedImages.forEach(img => {
   imageObserver.observe(img);
 });
+document.addEventListener("DOMContentLoaded", () => {
 
+  const slideShows = document.querySelectorAll(".slideshow-container");
+
+  slideShows.forEach((container, index) => {
+
+    const slides = container.querySelectorAll(".slide");
+    let current = 0;
+
+    setTimeout(() => {
+
+      setInterval(() => {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }, 5000 + (index * 1000));
+
+    }, index * 1000);
+
+  });
+
+  document.querySelectorAll(".polaroid").forEach((el, i) => {
+    setTimeout(() => {
+      el.classList.add("show");
+    }, i * 1000);
+  });
+
+});
 </script>
 
 </body>

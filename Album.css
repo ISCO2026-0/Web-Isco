@@ -1,0 +1,67 @@
+/*Flexbox*/
+.album-container{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* POLAROID */
+.polaroid {
+  display: flex;
+  background: #f7f3ea;              /* cream lembut */
+  padding: 14px 14px 30px;          /* bawah lebih tebal */
+  border-radius: 0px;               /* ← LANCIP */
+  margin: 0 0 10px 0;
+  width: fit-content;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+
+}
+
+.polaroid {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.polaroid.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* AREA FOTO */
+.slideshow-container {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;               /* ← LANCIP */
+  background: #ddd;
+}
+
+/* FOTO */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;               /* ← LANCIP */
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px){
+  .slideshow-container{
+    max-width: 240px;
+    max-height: 240px;
+    
+  }
+}
