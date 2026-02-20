@@ -6,7 +6,7 @@
   <title>ISCO 2026</title>
   <link rel="stylesheet" href="Banner.css">
   <link rel="stylesheet" href="Gambar.css">
-  <link rel="icon" type="image/png" href="">
+  <link rel="icon" type="image/png" href="Assets/Logo.png">
   <link rel="stylesheet" href="Album.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
                     <a href="#timeline" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Timeline</a>
                     <a href="#album" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Album</a>
                     <a href="#contact" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Contact</a>
-                    <a href="https://drive.google.com/drive/folders/1GQtUcJSWspYLu_FecqAZpBucLZUXpYaC" target="_blank" class="btn"><span>Pendaftaran</span></a>
+                    <a href="https://drive.google.com/drive/folders/1GQtUcJSWspYLu_FecqAZpBucLZUXpYaC" target="_self" class="btn"><span>Pendaftaran</span></a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -60,7 +60,7 @@
                     <a href="#timeline" class="mobile-menu-item">Timeline</a>
                     <a href="#album" class="mobile-menu-item">Album</a>
                     <a href="#contact" class="mobile-menu-item">Contact</a>
-                    <a href="https://drive.google.com/drive/folders/1GQtUcJSWspYLu_FecqAZpBucLZUXpYaC" target="_blank" class="mobile-menu-item buttonmobile">
+                    <a href="https://drive.google.com/drive/folders/1GQtUcJSWspYLu_FecqAZpBucLZUXpYaC" target="_self" class="mobile-menu-item buttonmobile">
                         Daftar
                     </a>
                 </div>
@@ -72,22 +72,29 @@
 
   <!-- HERO / HEADER -->
   <section class="hero">
-    <div class="hero-content">
-      <h1></h1>
-      <p></p>
-    </div>
-  </section>
+  <img src="Assets/Banner.jpeg" class="hero-img">
+
+  <div class="hero-content">
+    <!-- teks / tombol -->
+  </div>
+</section>
 
   <!-- SECTION -->
   <section id="isco" class="content">
-    <h2>Tentang ISCO</h2>
+    <h2> <span>Tentang ISCO</span> </h2>
     <p>
-      ISCO adalah ajang kompetisi Islami tingkat nasional yang diselenggarakan oleh SMAN 2 Jombang.
-    </p>
-
-    <h2>Apa yang ada di ISCO?</h2>
-
-<div class="section-cards">
+    ISCO (Islamic SMADA Competition) merupakan ajang kompetisi islami tingkat Provinsi Jawa Timur 
+    jenjang SD/MI dan SMP/MTs yang diselenggarakan setiap tahunnya oleh Remaja Masjid Miftahul Abror 
+    SMA Negeri 2 Jombang sebagai bentuk generasi islam yang tidak hanya kompeten dalam bidang akademik dan 
+    nonakademik, tetapi juga berintegritas, berakhlak mulia, dan memiliki tanggung jawab sosial, sehingga mampu 
+    memberikan kontribusi nyata bagi umat dan bangsa, serta berupaya meningkatkan kualitas pelajar Indonesia dalam 
+    bidang ilmu agama dan pembentukan karakter yang berpendidikan.
+    </p>                  
+  </section>
+  <section id="competitions" class="content">
+    <h2>Competitions</h2>
+    <p>Daftar lomba akan ditampilkan di sini.</p>
+    <div class="section-cards">
   <div class="card">
     <img src="Assets/Mimbar.png" class="animated-img" alt="Kategori Lomba (Da'i)" title="Da'i">
     <h3>Dai</h3>
@@ -124,13 +131,6 @@
     <a href="https://drive.google.com/drive/folders/12QDFCtJj_cCT_0_sgOZekJ-3ei_3l4ti" class="btn maroon">Guide Book</a>
   </div>
 </div>
-
-
-  </section>
-
-  <section id="competitions" class="content">
-    <h2>Competitions</h2>
-    <p>Daftar lomba akan ditampilkan di sini.</p>
   </section>
 
   <section id="timeline" class="content">
@@ -206,6 +206,7 @@
     <div class="slideshow-container">
       <img src="Assets/Album/8.jpeg" class="slide active">
       <img src="Assets/Album/9.jpeg" class="slide">
+      <img src="Assets/Album/10.jpeg" class="slide">
 
     </div>
   </div>
@@ -213,21 +214,29 @@
 </div>
   </section>
 
-  <section id="contact" class="content">
-    <h2>Media Sosial</h2>
-    <p>Instagram, WhatsApp, dan lainnya.</p>
-  </section>
-
-  <section id="pendaftaran" class="content">
-    <h2>Pendaftaran</h2>
-    <p>Link pendaftaran peserta.</p>
-  </section>
+<footer>
+  <div>
+    <div>
+      <h1>Contact</h1>
+      <h6>Jombang</h6>
+      <p>
+        Jalan Dokter Wahidin Sudirohusodo No.1, 
+        Sengon, Kec. Jombang, Kabupaten Jombang, 
+        Jawa Timur 61419
+      </p>
+      <a href="https://maps.app.goo.gl/tLTgHfkkQ69CeAm67" target="_blank" alt="Maps" title="Alamat">Lihat di Google Maps</a>
+      
+      <h6>Media Sosial</h6>
+    </div>
+  </div>
+</footer>
 <aside>
   <div class="timedate">
     <span class="time-label">Time</span>
     <div class="time-overlay" id="realTime"></div>
   </div>
 </aside>
+<canvas id="sandCanvas"></canvas>
  <script>
 /* ================= MOBILE MENU ================= */
 const toggle = document.getElementById("mobile-menu-toggle");
@@ -371,6 +380,139 @@ function updateJam() {
 
 setInterval(updateJam, 1000);
 updateJam();
+
+const canvas = document.getElementById("sandCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+let lastMouse = {x:0,y:0,time:0};
+
+window.addEventListener("resize",()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+document.addEventListener("click", e => {
+
+  const now = Date.now();
+  const dx = e.clientX - lastMouse.x;
+  const dy = e.clientY - lastMouse.y;
+  const dt = now - lastMouse.time || 1;
+
+  const speed = Math.sqrt(dx*dx + dy*dy) / dt;
+
+  lastMouse = {x:e.clientX, y:e.clientY, time:now};
+
+  const count = Math.min(120, Math.floor(30 + speed * 800));
+
+  for(let i=0;i<count;i++){
+    particles.push(createParticle(e.clientX,e.clientY,speed));
+  }
+
+});
+
+function createParticle(x,y,speed){
+  const angle = Math.random()*Math.PI*2;
+  const power = Math.random()*speed*40 + 8;
+
+  return{
+    x,
+    y,
+    vx:Math.cos(angle)*power,
+    vy:Math.sin(angle)*power,
+    size:Math.random()*3  +2,
+    rotation:Math.random()*360,
+    vr:(Math.random()-0.5)*10,
+    color:getSandColor(),
+    life:100
+  };
+}
+
+function getSandColor(){
+  const colors=[
+    "#C2A36B","#E6C78B","#D2B48C","#F5DEB3","#CBB279"
+  ];
+  return colors[Math.floor(Math.random()*colors.length)];
+}
+
+function updateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach((p,i)=>{
+
+    p.vy += 0.05;
+    p.vx *= 0.98;
+    p.vy *= 0.98;
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if(p.y > canvas.height){
+      p.y = canvas.height;
+      p.vy *= -0.4;
+    }
+
+    p.rotation += p.vr;
+    p.life--;
+
+    ctx.save();
+    ctx.translate(p.x,p.y);
+    ctx.rotate(p.rotation*Math.PI/180);
+    ctx.fillStyle=p.color;
+    ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
+    ctx.restore();
+
+    if(p.life<=0) particles.splice(i,1);
+
+  });
+
+  requestAnimationFrame(updateParticles);
+}
+
+updateParticles();
+
+document.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", function(e){
+
+    const href = this.getAttribute("href");
+
+    if (!href || this.target === "_blank") return;
+
+    e.preventDefault();
+
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // ledakan partikel di titik klik
+    for(let i=0;i<90;i++){
+      particles.push(createParticle(x,y,2));
+    }
+
+    setTimeout(()=>{
+
+      // 🔥 kalau anchor scroll
+      if(href.startsWith("#")){
+        const target = document.querySelector(href);
+        if(target){
+          target.scrollIntoView({behavior:"smooth"});
+        }
+      }
+
+      // 🔥 kalau pindah halaman
+      else{
+        window.location.href = href;
+      }
+
+    },300);
+
+  });
+
+});
+
 </script>
 
 </body>

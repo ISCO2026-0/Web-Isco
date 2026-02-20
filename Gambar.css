@@ -131,15 +131,17 @@
 }
 
 .timeline-grid{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin: 40px auto;
-  padding: 60px 30px;
+  padding: 60px 20px;
   background: rgb(255, 255, 255);
   border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   width: fit-content;
 }
 

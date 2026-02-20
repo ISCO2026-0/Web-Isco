@@ -227,8 +227,10 @@ div {
 }
 .flexh1logo{
   display: flex;
-  align-items: center;
-
+  justify-content: flex-start;
+  gap: 20px;
+  align-self : center;
+  
 }
 .navbar.scrolled .flexh1logo{
   background: linear-gradient(0deg, #df0c1a, #77181e, rgba(98, 3, 250, 0.904));
@@ -237,22 +239,24 @@ div {
 }
 
 .nav-logo {
-    width: 40px;
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    width: 65px;
     height: 40px;
-    background-image: url('Assets/Qur\'an.png');
-    background-size: contain;
+    background-image: url('Assets/Logo.png');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 12px;
 }
 
 .h1flex{
-  align-items: center;
+  display: flex;
+  align-self: center;
+  white-space: nowrap;
   color: white;
   font-family: "Cinzel";
   font-weight: 550;
 }
-
 
  .dekstop-menu > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
@@ -261,6 +265,10 @@ div {
 }
 
 .dekstop-menu a{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  white-space: nowrap;
   font-size: 19px;
   font-weight: 550;
   color: #e2d6d1;
@@ -551,34 +559,37 @@ button, input, optgroup, select, textarea {
 
 /* HERO */
 /* DEFAULT → LAPTOP */
-.hero {
-  min-height: 100vh;
-  background-image: url("Assets/Banner.jpeg");
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
+.hero{
+  position:relative;
 }
+.hero-img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit: contain;
+}
+.hero-content{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45); /* tingkat gelap */
+}
+
 
 /* HP */
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh;
-    background-position: center top;
-  }
-}
 
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
+
+
 
 .hero-content {
   position: relative;
@@ -614,6 +625,7 @@ button, input, optgroup, select, textarea {
   font-size: 16px;
   line-height: 1.7;
   color: #333;
+  text-align: justify;
 }
 
 /* Mobile: layar ≤ 768px */
@@ -630,5 +642,19 @@ button, input, optgroup, select, textarea {
   .content p {
     font-size: 14px;      /* paragraf lebih nyaman dibaca */
     line-height: 1.5;
+    text-align: justify;
   }
+}
+#sandCanvas{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:9999;
+}
+a, .btn {
+  position: relative;
+  z-index: 1;
 }
