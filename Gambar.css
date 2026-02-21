@@ -55,10 +55,10 @@
     }
 
     .card .btn {
-      display: inline-block;
+      display: flex;
       text-decoration: none;
       padding: 10px 80px;
-      margin: 5px 0;
+      margin: 5px;
       border-radius: 80px;
       font-weight: 500;
       color: white;
@@ -108,7 +108,13 @@
 
     max-width: 280px;
   }
+  
+}
 
+@media (max-width: 360px){
+  .card .btn{
+    padding: 10px 4.2rem;
+  }
 }
 
     /* Gambar awal (belum muncul) */
@@ -236,5 +242,8 @@
 }
   .arrow{
     display: none;
+  }
+  .timeline-grid{
+    padding: 60px 10px 60px 10px;
   }
 }

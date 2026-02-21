@@ -193,7 +193,7 @@ div {
   border-radius: 120px;
 }*/
 
-.navbar.scrolled .dekstop-menu .btn:nth-child(6){
+.navbar.scrolled .dekstop-menu .btn{
   background: linear-gradient(-190deg, #dd515ba6, #db444e, rgba(167, 66, 66, 0.904));
   border:0.2px solid #77181e21;
   text-shadow: none;
@@ -300,9 +300,74 @@ div {
 
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.dekstop-menu a:hover::after{
+.dekstop-menu a:nth-child(-n+5):hover::after{
   transform: scaleX(1);
 }
+
+.dekstop-menu a:nth-child(-n+5):active{
+  text-shadow:0px 0px 0.5px rgba(255, 196, 0, 0.123), 0.5px 0.5px 0.5px rgba(185, 179, 179, 0.021);
+  
+  background: linear-gradient(140deg,
+    #f57966,
+    #ce353f,
+    #96142e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dekstop-menu a:nth-child(-n+5):active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(140deg,
+    #f57966,
+    #ce353f,
+    #96142e);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dekstop-menu a:nth-child(-n+5):hover::after{
+  transform: scaleX(1);
+}
+
+.dekstop-menu .btn:hover{
+  transition: 0.2s;
+  transform: translate(0.5px, -0.5px);
+  opacity: 0.7;
+  background: linear-gradient(
+    140deg,
+    #e4d6d4,
+    #f0c8cb,
+    #b4afb0
+  );
+}
+
+.dekstop-menu .btn:active{
+  transition: 0.2s;
+  transform: translate(0.5px, -0.5px);
+  opacity: 0.7;
+  background: linear-gradient(
+    140deg,
+    #f57966,
+    #ce353f,
+    #96142e
+  );
+}
+
+.navbar.scrolled .dekstop-menu .btn:active{
+  background: linear-gradient(-190deg, #910c0ca6, #c9313b, rgba(134, 11, 11, 0.904));
+  border:0.2px solid #77181e21;
+  text-shadow: none;
+  color: rgba(255, 255, 255, 0.911);
+}
+
 .navbar.scrolled .dekstop-menu a:nth-child(-n+5):after {
   content: "";
   display: block;
@@ -315,6 +380,26 @@ div {
     #c52b368f,
     #b4071296
   );
+
+  border-radius: 120px;
+}
+
+.navbar.scrolled .dekstop-menu a:nth-child(-n+5):active{
+  text-shadow:0px 0px 0.5px rgba(255, 196, 0, 0.123), 0.5px 0.5px 0.5px rgba(185, 179, 179, 0.021);
+  
+  background: linear-gradient(-190deg, #dac3eea6, #ce2430, rgba(166, 109, 235, 0.904));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.navbar.scrolled .dekstop-menu a:nth-child(-n+5):active:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+
+  background: linear-gradient(-190deg, #dac3eea6, #ce2430, rgba(166, 109, 235, 0.904));
 
   border-radius: 120px;
 }
@@ -675,18 +760,32 @@ section #isco p div span{
   white-space: nowrap;
 }
 
+footer{
+
+  background: rgba(219, 211, 211, 0.5);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 8px 32px 10px rgba(155, 148, 148, 0.25);
+    border: 1px solid rgba(240, 236, 236, 0.5);
+    margin-top: 200px;
+}
+
+footer{
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
 footer .spasi{
-  padding-top: 1rem;
+  max-width: 1200px;
+  padding-top: 1.5rem;
   padding-bottom: 50px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin:auto;
 }
 
 footer .container{
   display: flex;
-  gap: 50px;
+  flex-wrap: wrap;
+  gap: 40px;
   justify-content: space-between ;
   align-content: center;
 }
@@ -698,7 +797,7 @@ footer .nomor{
   
 }
 footer .nomor .isi{
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 footer .nomor ul{
@@ -706,14 +805,15 @@ footer .nomor ul{
 }
 footer .alamat{
   display: flex;
-  flex-direction: column;
   white-space: nowrap;
+  flex-direction: column;
 }
 
 footer .medsos{
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  padding-right: 2.5rem;
 }
 
 footer .medsos .icon{
@@ -721,10 +821,36 @@ footer .medsos .icon{
   flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
+footer h1,
+footer h2{
+  font-family: 'Cinzel', serif;
+  margin-bottom: 5px;
+}
+
+footer p,
+footer a,
+footer li{
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(51, 49, 49, 0.8);
+}
+
+footer a{
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
   footer .container{
     flex-direction: column;
-    gap: 0;
     gap:30px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  footer .spasi{
+    padding-bottom: 20px;
   }
 }
