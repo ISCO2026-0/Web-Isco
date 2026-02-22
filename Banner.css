@@ -138,7 +138,7 @@ div {
 
 .navbar.scrolled {
   backdrop-filter: blur(60px);
-  background: rgba(172, 166, 166, 0.459);
+  background: rgba(214, 200, 200, 0.459);
 }
 
 .navbar.scrolled .dekstop-menu a:nth-child(-n+5) {
@@ -199,7 +199,7 @@ div {
   
 }
 .navbar.scrolled .flexh1logo{
-  background: linear-gradient(170deg, rgb(138, 127, 127), #5a0006, rgba(129, 115, 115, 0.904));
+  background: linear-gradient(180deg, rgb(138, 127, 127), #8f040d, rgba(155, 144, 144, 0.904));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
