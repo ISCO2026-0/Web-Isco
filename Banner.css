@@ -156,43 +156,6 @@ div {
   font-weight: 800;
 }
 
-
-
-/*
-.btn span {
-  position: relative;
-}
-
-.btn span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 1.2px;
-  background: currentColor;
-  transform-origin: center;
-  transform: scaleX(0);
-  transition: 0.3s;
-}
-
-.btn:hover span::after {
-  transform: scaleX(1);
-}
-.navbar.scrolled .dekstop-menu .btn span:after {
-  content: "";
-  position:absolute;
-  width: 100%;
-
-  background: linear-gradient(
-    200deg,
-    #ddbcb9ee,
-    #e7c4c78f,
-    #f0c6ca96
-  );
-  border-radius: 120px;
-}*/
-
 .navbar.scrolled .dekstop-menu .btn{
   background: linear-gradient(-190deg, #dd515ba6, #db444e, rgba(167, 66, 66, 0.904));
   border:0.2px solid #77181e21;
@@ -683,7 +646,7 @@ button, input, optgroup, select, textarea {
 @media (max-width: 768px) {
 
   .hero {
-
+    background-image: url("Assets/BannerMobile.jpeg");
     /* tinggi bisa kamu kontrol — ini bikin “menciut elegan” */
     min-height: clamp(420px, 65vh, 700px);
 
@@ -693,8 +656,18 @@ button, input, optgroup, select, textarea {
     /* 🔥 INI KUNCI UTAMA NGATUR KOMPOSISI */
     background-position: center 20%;
   }
+  :root {
+  --nav-h: 70px;
+}
+
+.hero {
+  min-height: calc(100vh - var(--nav-h));
+  margin-top: var(--nav-h);
+}
 
 }
+
+
 .hero::after {
   content: "";
   position: absolute;
@@ -813,8 +786,6 @@ footer .container{
 }
 
 footer .nomor{
-  display: flex;
-  flex-direction: column;
   white-space: nowrap;
   
 }
@@ -826,23 +797,19 @@ footer .nomor ul{
   list-style-type: none;
 }
 footer .alamat{
-  display: flex;
   white-space: nowrap;
-  flex-direction: column;
 }
 
 footer .medsos{
-  display: flex;
-  flex-direction: column;
   white-space: nowrap;
   padding-right: 2.5rem;
 }
 
-footer .medsos .icon{
+footer .medsos .iconmedsos{
   display: inline-block;
-  flex-direction: column;
+
 }
-footer .medsos .icon i{
+footer .medsos .iconmedsos i{
   margin-right: 5px;
 }
 
@@ -861,8 +828,13 @@ footer li{
   color: rgb(43, 43, 43);
 }
 
-footer a{
+footer a, svg{
   text-decoration: none;
+  display: inline-block;
+}
+
+footer svg{
+  margin-left: 5px;
 }
 
 footer a:hover{
@@ -890,4 +862,9 @@ footer a:hover{
   footer h2{
     font-size: 28px;
   }
+}
+
+.icon{
+  width:18px;
+  fill: currentColor;
 }
