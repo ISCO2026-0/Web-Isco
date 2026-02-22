@@ -627,8 +627,19 @@ button, input, optgroup, select, textarea {
 
 /* HERO */
 /* DEFAULT → LAPTOP */
+
+:root {
+  --nav-h: 72px;
+}
+
 .hero {
-  min-height: 100vh;
+  min-height: clamp(
+    420px,
+    calc(100dvh - var(--nav-h)),
+    700px
+  );
+
+  margin-top: var(--nav-h);
   background-image: url("Assets/Banner.jpeg");
   background-size: cover;
 
@@ -644,30 +655,12 @@ button, input, optgroup, select, textarea {
 
 /* HP */
 @media (max-width: 768px) {
-
   .hero {
     background-image: url("Assets/BannerMobile.jpeg");
-    /* tinggi bisa kamu kontrol — ini bikin “menciut elegan” */
-    min-height: clamp(420px, 65vh, 700px);
-
-    /* tetap cover biar penuh */
-    background-size: cover;
-
-    /* 🔥 INI KUNCI UTAMA NGATUR KOMPOSISI */
     background-position: center 20%;
   }
-  :root {
-  --nav-h: 70px;
-}
-
-.hero {
-  min-height: calc(100vh - var(--nav-h));
-  margin-top: var(--nav-h);
-}
 
 }
-
-
 .hero::after {
   content: "";
   position: absolute;
