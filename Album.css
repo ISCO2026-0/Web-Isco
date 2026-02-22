@@ -93,7 +93,7 @@
   object-fit: contain;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .sponsor-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
