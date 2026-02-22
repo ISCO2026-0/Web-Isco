@@ -302,6 +302,7 @@
 }
 
 .prize-grid h2{
-  color: rgba(212, 45, 53, 0.856);
- font-family: 'Cinzel Decorative';
+  color: rgba(244, 248, 15, 0.973);
+  font-family: 'Cinzel';
+  text-shadow: -1px -1px rgba(29, 27, 27, 0.623);
 }
