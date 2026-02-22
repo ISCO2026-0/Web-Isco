@@ -4,11 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
-  overflow-x: hidden;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-html{
-scroll-behavior: smooth;
+html, body {
+  overflow-x: clip;
 }
 html {
   scroll-padding-top: 100px; /* tinggi navbar kamu */
@@ -75,7 +77,6 @@ body {
     background-position: top center;
     min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
 }
 
 div {
@@ -661,7 +662,7 @@ button, input, optgroup, select, textarea {
 .hero {
   min-height: clamp(
     420px,
-    calc(100dvh - var(--nav-h)),
+    calc(100vh - var(--nav-h)),
     700px
   );
 
@@ -678,7 +679,18 @@ button, input, optgroup, select, textarea {
 
   position: relative;
 }
+.navbar{
+  will-change: transform;
+}
 
+@media (max-width: 768px) {
+  .h1flex{
+    font-size: 1.5rem;
+  }
+  :root {
+  --nav-h: 70px;
+}
+}
 /* HP */
 @media (max-width: 768px) {
   .hero {
@@ -707,7 +719,7 @@ button, input, optgroup, select, textarea {
   font-family: 'Cinzel Decorative';
   font-size: 28px;
   margin-bottom: 5px;
-  color: #7a1f1f;
+  color: #972525;
   text-shadow: -2px -2px rgba(145, 134, 134, 0.411);
 }
 
@@ -737,12 +749,9 @@ button, input, optgroup, select, textarea {
 }
 #sandCanvas{
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:9999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 a, .btn {
   position: relative;
@@ -762,7 +771,7 @@ footer{
 
   background: rgba(219, 211, 211, 0.5);
     backdrop-filter: blur(25px);
-    box-shadow: 0 8px 32px 10px rgba(155, 148, 148, 0.295);
+    box-shadow: 0 8px 32px 10px rgba(155, 148, 148, 0.192);
     border: 1px solid rgba(240, 236, 236, 0.5);
     margin-top: 200px;
 }
@@ -813,9 +822,6 @@ footer .medsos .iconmedsos{
   display: inline-block;
 
 }
-footer .medsos .iconmedsos i{
-  margin-right: 5px;
-}
 
 footer h2{
   font-family: 'Cinzel', serif;
@@ -837,7 +843,10 @@ footer a, svg{
   display: inline-block;
 }
 
-footer svg{
+footer .medsos svg{
+  margin-right: 5px;
+}
+footer .alamat svg{
   margin-left: 5px;
 }
 

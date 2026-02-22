@@ -45,7 +45,7 @@
     .card img {
       width: 350px;            /* ukuran gambar */
       height: auto;
-      margin-bottom: 15px;
+      margin-top: 15px;
     }
 
     .card h3 {
@@ -115,6 +115,18 @@
   .card .btn{
     padding: 10px 4.2rem;
   }
+  .card .btn.maroon{
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 330px){
+  .card .btn{
+    padding: 10px 3rem;
+  }
+  .card{
+    padding-top: 0px;
+  }
 }
 
     /* Gambar awal (belum muncul) */
@@ -180,6 +192,13 @@
   font-size: 0.9rem;
   white-space: nowrap;
   font-family: 'Cinzel Decorative';
+}
+
+@media (max-width: 320px){
+ .date{
+  white-space: wrap;
+  padding: 12px 16px;
+ }
 }
 
 /* TITLE */
@@ -280,4 +299,9 @@
 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.11);
   transition: 0.3s;
+}
+
+.prize-grid h2{
+  color: rgba(212, 45, 53, 0.856);
+ font-family: 'Cinzel Decorative';
 }

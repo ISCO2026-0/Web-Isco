@@ -63,3 +63,43 @@
     
   }
 }
+
+.sponsor-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3em;
+
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.sponsor-card {
+  background: rgba(189, 179, 179, 0.178);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(189, 179, 179, 0.5);
+  border-radius: 15px;
+
+  aspect-ratio: 3 / 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+  #Sponsor h2{
+  font-size: 20px;
+}
+}
+
