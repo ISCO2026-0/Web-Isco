@@ -199,7 +199,7 @@ div {
   
 }
 .navbar.scrolled .flexh1logo{
-  background: linear-gradient(180deg, rgb(138, 127, 127), #9b0811, rgba(155, 144, 144, 0.904));
+  background: linear-gradient(180deg, rgb(138, 127, 127), #9e0812, rgba(155, 144, 144, 0.904));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
