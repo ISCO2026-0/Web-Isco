@@ -719,14 +719,12 @@ document.querySelectorAll("a").forEach(link => {
     const x = e.clientX;
     const y = e.clientY;
 
-    // ledakan partikel di titik klik
     for(let i=0;i<90;i++){
       particles.push(createParticle(x,y,2));
     }
 
     setTimeout(()=>{
 
-      // 🔥 kalau anchor scroll
       if(href.startsWith("#")){
         const target = document.querySelector(href);
         if(target){
@@ -734,7 +732,6 @@ document.querySelectorAll("a").forEach(link => {
         }
       }
 
-      // 🔥 kalau pindah halaman
       else{
         window.location.href = href;
       }
